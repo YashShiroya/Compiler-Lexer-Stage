@@ -4,11 +4,8 @@ JAVAc=javac
 
 all: git-commit DecimalParser.class FloatParser.class SimpleC.class 
 
-DecimalParser.class: DecimalParser.java
-	$(JAVAC) DecimalParser.java
-
-FloatParser.class: FloatParser.java
-	$(JAVAC) FloatParser.java
+ExprEval.class: ExprEval.java
+	$(JAVAC) ExprEval.java
 
 SimpleC.class: SimpleC.jj
 	$(JAVACC) SimpleC.jj 
