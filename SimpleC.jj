@@ -1,0 +1,52 @@
+
+PARSER_BEGIN(SimpleC)
+
+/** Simple brace matcher. */
+public class SimpleC {
+
+  /** Main entry point. */
+  public static void main(String args[]) throws ParseException {
+    SimpleC parser = new SimpleC(System.in);
+    parser.Input();
+  }
+
+}
+
+PARSER_END(SimpleC)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+TOKEN :
+{
+  <LPARENT: "(">
+| <RPARENT: ")">
+}
+
+
+/**Root production. */
+void Input() :
+{ int count; }
+{
+  count=anytoken() <EOF>
+  { System.out.println("The number of tokens is " + count); }
+}
+
+int anytoken():
+{
+  Token t;
+  int count=0;
+}
+{
+  (
+   t = <LPARENT> { System.out.println("LPARENT, \""+t.image+"\"" ); count++; } |
+   t = <RPARENT> { System.out.println("RPARENT, \""+t.image+"\"" ); count++; } 
+  )+
+  {return count;}
+}
+
