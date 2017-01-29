@@ -2,7 +2,7 @@
 JAVACC=/homes/cs352/javacc-6.0/bin/javacc
 JAVAc=javac
 
-all: git-commit DecimalParser.class FloatParser.class SimpleC.class 
+all: git-commit ExprEval.class SimpleC.class 
 
 ExprEval.class: ExprEval.java
 	$(JAVAC) ExprEval.java
