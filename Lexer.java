@@ -48,7 +48,7 @@ public class Lexer {
         // the result of the above loop will be the following string:
         // "|(?<NUMBER>[0-9]+(\\.[0-9]+)?)|(?<PLUS>\+)|(?<LPAREN>\()|(?<RPAREN>\))"
 
-        String buffer_negated = "(?!" + buffer + ")";
+        String buffer_negated = "(?!" + buffer.substring(1) + ")";
         System.out.println("buffer_negated: " + buffer_negated);
         
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
