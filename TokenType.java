@@ -3,8 +3,24 @@
 // it is used by the Lexer class to split a string into an array of tokens
 // remember that in Java, each enum case is sortof like an object that can hold its own data -- this is very different from enums in C
 enum TokenType {
+
     NUMBER("[0-9]+(\\.[0-9]+)?"),
+
     PLUS("\\+"),
+    MINUS("\\-"),
+    MULTIPLY("\\*"),
+    DIVIDE("\\/"),
+    EXPONENT("\\^"),
+
+    //sin, cos, tan, ln, atan, atan2
+    SIN("sin"),
+    COS("cos"),
+    TAN("tan"),
+    LOG("ln"),
+    ATAN("atan"),
+    ATAN2("atan2"),
+
+
     LPAREN("\\("),
     RPAREN("\\)");
 
