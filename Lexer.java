@@ -63,7 +63,7 @@ public class Lexer {
                     // we have found a token!
                     // a new TokenStruct object to the list of tokenStructs with the correct type and data
                     tokenStructs.add(new TokenStruct(tokenType, matcher.group(tokenType.name())));
-                    //break;
+                    break;
                 }
             }
         }
