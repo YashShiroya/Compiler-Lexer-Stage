@@ -55,7 +55,7 @@ public class Lexer {
 
         Matcher notMatcher = notPatter.matcher(expression);
 
-        if(notMatcher.find()) System.out.println("\n\nError: You done messed up!\n\n");
+        if(notMatcher.find()) System.out.println("\n\nError:" + notMatcher.group() + " \n\n");
         
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
         Pattern pattern = Pattern.compile(buffer.substring(1));
