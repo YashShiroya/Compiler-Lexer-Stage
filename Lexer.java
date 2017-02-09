@@ -66,7 +66,7 @@ public class Lexer {
             // the () creates a group
             // the ?<string> at the beginning gives that group the name "string"
             // after the name to before the end of the group is the actual pattern that that group should match
-            buffer.append(String.format("|(?!(?<%s>%s))", tokenName, tokenPattern));
+            buffer_negated.append(String.format("|(?!(?<%s>%s))", tokenName, tokenPattern));
         }
 
         // System.out.println("\nbuffer: " + buffer + "\n");
