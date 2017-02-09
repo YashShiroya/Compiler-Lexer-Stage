@@ -75,11 +75,11 @@ public class Lexer {
         
         System.out.println("\nbuffer_negated: " + buffer_negated + "\n");
 
-        // Pattern notPatter = Pattern.compile(buffer_negated);
+        Pattern notPatter = Pattern.compile(buffer_negated.substring(1));
 
-        // Matcher notMatcher = notPatter.matcher(expression);
+        Matcher notMatcher = notPatter.matcher(expression);
 
-        // if(notMatcher.find()) System.out.println("\n\nError: huh? \n\n");
+        if(notMatcher.find()) System.out.println("\n\nError: huh? \n\n");
 
 
         //________________
