@@ -50,6 +50,12 @@ public class Lexer {
 
         String buffer_negated = "(?!" + buffer.substring(1) + ")";
         System.out.println("\nbuffer_negated: " + buffer_negated + "\n");
+
+        Pattern notPatter = Pattern.compile(buffer_negated);
+
+        Matcher notMatcher = notPatter.matcher(expression);
+
+        if(matcher.find()) System.out.println("\n\nError: You done messed up!\n\n");
         
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
         Pattern pattern = Pattern.compile(buffer.substring(1));
