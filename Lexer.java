@@ -26,6 +26,9 @@ public class Lexer {
 
     // This function converts this.expression into an array of tokenStructs
     private void tokenize() {
+
+        System.out.println("debug_mode: " + lexer_debug);
+
         tokenStructs = new ArrayList<TokenStruct>();
         StringBuilder buffer = new StringBuilder(); // use a StringBuilder because string concatenation in Java is expensive
         
