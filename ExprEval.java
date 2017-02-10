@@ -20,7 +20,7 @@ class ExprEval {
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
 
         for (TokenStruct t : tokenList) {
-            System.out.print(t.type.name());
+            System.out.println(t.data);
         }
 
         System.out.print("\n");
