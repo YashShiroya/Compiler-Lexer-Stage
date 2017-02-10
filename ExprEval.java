@@ -16,7 +16,9 @@ class ExprEval {
     public static double evaluate(String expr, double xval) throws Exception {
 
         Lexer lexEval = new Lexer(expr);
-        
+
+
+        // getter
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
 
         for (TokenStruct t : tokenList) {
@@ -29,9 +31,6 @@ class ExprEval {
 
 
         lexEval.printTokens();
-
-
-        System.out.print("\n");
 
         return 0;
     }
