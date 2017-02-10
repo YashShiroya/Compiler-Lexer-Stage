@@ -31,7 +31,7 @@ class ExprEval {
 
     TokenStruct lex() {
         if(it.hasNext()) { 
-            return it.next();
+            return it.next().type.name();
         }
         else {
             System.out.print("---------\nReached end of tokens!\n---------");
@@ -41,6 +41,8 @@ class ExprEval {
     public static double evaluate(String expr, double xval) throws Exception {
 
         Lexer lexEval = new Lexer(expr);
+
+        String nextToken = ;
 
 
         // getter
@@ -69,11 +71,9 @@ class ExprEval {
 
             double termOut = term();
 
+            while(nextToken == "PLUS" || nextToken == "MULTIPY") {
 
-
-            do {
-
-            } while();
+            }
         }
 
         return 0;
