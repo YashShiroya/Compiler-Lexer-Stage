@@ -21,6 +21,7 @@ class ExprEval {
 
         for (TokenStruct t : tokenList) {
             if(t.type.name() == "VAR") {
+                t.type = "NUMBER";
                 t.data = Double.toString(xval);
             }
             if(lexEval.lexer_debug) System.out.println(t.data);
