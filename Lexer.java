@@ -66,7 +66,7 @@ public class Lexer {
         
         //________________
         
-        System.out.println("len: " + expressionReplaced.length);
+        System.out.println("len: " + expressionReplaced.length());
 
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
         Pattern pattern = Pattern.compile(buffer.substring(1));
