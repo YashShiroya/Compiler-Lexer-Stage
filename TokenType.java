@@ -13,6 +13,8 @@ enum TokenType {
     EXPONENT("\\^"),
 
     //sin, cos, tan, ln, atan, atan2
+
+    //Regex replace with "" all matched instances
     SIN("sin"),
     COS("cos"),
     TAN("tan"),

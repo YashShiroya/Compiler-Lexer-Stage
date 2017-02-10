@@ -50,38 +50,20 @@ public class Lexer {
 
         //________________
 
-        StringBuilder buffer_negated = new StringBuilder();
+        //Experimental
+        /*
+         * Make a copy of expression
+         * Iterate and check with all 'values' in enum and "replace" with "<blank>"
+         * Check if expression string is empty?
+         */
 
-        for (TokenType tokenType : TokenType.values()) {
-            // here lies the magic...
-            // as an `enum`, the TokenType class provides a default String name() method which returns the literal name of the token (such as NUMBER, PLUS, etc...)
-            String tokenName = tokenType.name();
+        String expressionReplaced = expression;
 
-            // remember that each TokenType had an associated string called "pattern" that contained the regex needed to match that particular type of token
-            String tokenPattern = tokenType.pattern;
-
-            // what we are doing is building up one really long regex from a bunch of small regexes here
-            // this creates a series of "matching groups" -- see http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#groupname
-            // It allows you to match a specific portion of a longer regex and refer to it later by name
-            // the () creates a group
-            // the ?<string> at the beginning gives that group the name "string"
-            // after the name to before the end of the group is the actual pattern that that group should match
-            buffer_negated.append(String.format("|(?!(?<%s>%s))", tokenName, tokenPattern));
-        }
-
-        // System.out.println("\nbuffer: " + buffer + "\n");
-
-        // String buffer_negated = "(?!" + buffer.substring(1) + ")";
+            for(TokenType t: TokenType.values()) {
+                expressionReplaced.replaceAll(t.name, "");
+                System.out.println("exp replaced " + t.name + ": " expressionReplaced);
+            }
         
-        System.out.println("\nbuffer_negated: " + buffer_negated + "\n");
-
-        Pattern notPatter = Pattern.compile(buffer_negated.substring(1));
-
-        Matcher notMatcher = notPatter.matcher(expression);
-
-        if(notMatcher.find()) System.out.println("\n\nError: huh? \n\n");
-
-
         //________________
         
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
