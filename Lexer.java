@@ -75,6 +75,10 @@ public class Lexer {
         
         if(lexer_debug) System.out.println("len: " + expressionReplaced.length());
 
+        if(expressionReplaced.length() != 0) {
+            System.out.println("Error: Lexer detected unidentified tokens.");
+        }
+
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
         Pattern pattern = Pattern.compile(buffer.substring(1));
 
