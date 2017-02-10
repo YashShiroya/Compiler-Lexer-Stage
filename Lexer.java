@@ -61,12 +61,13 @@ public class Lexer {
 
             for(TokenType t: TokenType.values()) {
                expressionReplaced = expressionReplaced.replaceAll(t.pattern, "");
-                // System.out.println("tPattern: " + t.pattern);
                 System.out.println("exp replaced " + t.name() + ": " + expressionReplaced);
             }
         
         //________________
         
+        System.out.println("len: " + expressionReplaced.length);
+
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
         Pattern pattern = Pattern.compile(buffer.substring(1));
 
