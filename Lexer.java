@@ -30,7 +30,7 @@ public class Lexer {
     //Experimental methods
 
    public ArrayList<TokenStruct> releaseTokenList() {
-        System.out.println("Accessed: releaseTokenList");
+        // System.out.println("Accessed: releaseTokenList");
         return tokenStructs;
    }
 
