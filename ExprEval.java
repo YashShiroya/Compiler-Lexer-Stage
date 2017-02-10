@@ -12,6 +12,31 @@ class ExprEval {
       System.out.println("y="+val);
     }
 
+    // int accept(TokenType type) {
+    //     if (sym == s) {
+    //         nextsym();
+    //         return 1;
+    //     }
+    //     return 0;
+    // }
+
+    // int expect(TokenType type) {
+    //     if (accept(s))
+    //         return 1;
+    //     error("expect: unexpected symbol");
+    //     return 0;
+    // }
+
+    ListIterator<ArrayList<TokenStruct>> it = tokenList.listIterator();
+
+    TokenStruct lex() {
+        if(it.hasNext()) { 
+            return it.next();
+        }
+        else {
+            System.out.print("---------\nReached end of tokens!\n---------");
+        }
+    }    
 
     public static double evaluate(String expr, double xval) throws Exception {
 
@@ -31,6 +56,25 @@ class ExprEval {
 
 
         lexEval.printTokens();
+
+        double current_val = (double) 0;
+
+        /*
+            <expr> → <term> {(+ | -) <term>}
+            <term> → <factor> {(* | /) <factor>}
+            <factor> → id | int_constant | double_constant | ( <expr> )
+        */
+
+        double expr() {
+
+            double termOut = term();
+
+
+
+            do {
+
+            } while();
+        }
 
         return 0;
     }
