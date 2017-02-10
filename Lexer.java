@@ -9,6 +9,8 @@ public class Lexer {
     private String expression;
     private ArrayList<TokenStruct> tokenStructs;
 
+    boolean lexer_debug = 0;
+
     public Lexer(String expression) {
         this.expression = expression.replaceAll("\\s+", ""); // remove all of the spaces from the input expression
         this.tokenize(); // initialize our token array from the expression string
@@ -61,12 +63,14 @@ public class Lexer {
 
             for(TokenType t: TokenType.values()) {
                expressionReplaced = expressionReplaced.replaceAll(t.pattern, "");
-                System.out.println("exp replaced " + t.name() + ": " + expressionReplaced);
+               if(lexer_debug) {
+                    System.out.println("exp replaced " + t.name() + ": " + expressionReplaced);
+               }
             }
         
         //________________
         
-        System.out.println("len: " + expressionReplaced.length());
+        if(lexer_debug) System.out.println("len: " + expressionReplaced.length());
 
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
         Pattern pattern = Pattern.compile(buffer.substring(1));
