@@ -20,8 +20,13 @@ class ExprEval {
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
 
         for (TokenStruct t : tokenList) {
+            if(t.type.name() == "VAR") {
+                t.data = Double.toString(xval);
+            }
             System.out.println(t.data);
         }
+
+
 
         System.out.print("\n");
 
