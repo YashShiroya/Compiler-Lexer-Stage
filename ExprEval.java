@@ -23,9 +23,11 @@ class ExprEval {
             if(t.type.name() == "VAR") {
                 t.data = Double.toString(xval);
             }
-            System.out.println(t.data);
+            if(lexEval.lexer_debug) System.out.println(t.data);
         }
 
+
+        lexEval.printTokens();
 
 
         System.out.print("\n");
