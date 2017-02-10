@@ -16,7 +16,7 @@ class ExprEval {
 
         Lexer lexEval = new Lexer(expr);
         
-        private ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
+        ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
 
         for (TokenStruct t : tokenList) {
             System.out.printf("%s ", t.toString());
