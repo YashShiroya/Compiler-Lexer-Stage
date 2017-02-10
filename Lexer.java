@@ -9,7 +9,7 @@ public class Lexer {
     private String expression;
     private ArrayList<TokenStruct> tokenStructs;
 
-    boolean lexer_debug = 0;
+    boolean lexer_debug = false;
 
     public Lexer(String expression) {
         this.expression = expression.replaceAll("\\s+", ""); // remove all of the spaces from the input expression
