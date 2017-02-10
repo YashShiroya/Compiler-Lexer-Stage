@@ -15,7 +15,8 @@ class ExprEval {
   public static double evaluate(String expr, double xval) throws Exception {
     
     Lexer lexEval = new Lexer(expr);
-    lexEval.printTokens();
+    
+    lexEval.releaseTokenList();
 
     return 0;
   }

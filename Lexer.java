@@ -24,6 +24,18 @@ public class Lexer {
 	System.out.print("\n");
     }
 
+
+    //____________
+
+    //Experimental methods
+
+   public ArrayList<TokenStruct> releaseTokenList() {
+        System.out.println("Accessed: releaseTokenList");
+        return tokenStructs;
+   }
+
+    //____________
+
     // This function converts this.expression into an array of tokenStructs
     private void tokenize() {
 
