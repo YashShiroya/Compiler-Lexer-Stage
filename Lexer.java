@@ -60,9 +60,9 @@ public class Lexer {
         String expressionReplaced = expression;
 
             for(TokenType t: TokenType.values()) {
-                // expressionReplaced.replaceAll(t, "");
-                System.out.println("tPattern: " + t.pattern);
-                // System.out.println("exp replaced " + t.name() + ": " + expressionReplaced);
+                expressionReplaced.replaceAll(t, "");
+                // System.out.println("tPattern: " + t.pattern);
+                System.out.println("exp replaced " + t.name() + ": " + expressionReplaced);
             }
         
         //________________
