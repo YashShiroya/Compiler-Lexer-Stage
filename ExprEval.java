@@ -62,9 +62,9 @@ class ExprEval {
         double current_val = (double) 0;
 
         /*
-            <expr> → <term> {(+ | -) <term>}
-            <term> → <factor> {(* | /) <factor>}
-            <factor> → id | int_constant | double_constant | ( <expr> )
+            <expr> -> <term> {(+ | -) <term>}
+            <term> -> <factor> {(* | /) <factor>}
+            <factor> -> id | int_constant | double_constant | ( <expr> )
         */
 
         double expr() {
