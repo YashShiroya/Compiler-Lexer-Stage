@@ -168,8 +168,6 @@ class ExprEval {
             
             // For the RHS id, just call lex
             TokenStruct temp = nextToken;
-
-            System.out.println("number: " + nextToken.data);
             
             //Update nextToken
             lex();
