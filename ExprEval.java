@@ -17,7 +17,7 @@ class ExprEval {
     enum exprSign {DEFUALT, PLUS, MINUS};
     enum termSign {DEFUALT, MULTIPLY, DIVIDE};
 
-    TokenStruct nextToken = null;
+    private static TokenStruct nextToken = null;
 
 
     public static void error() {
