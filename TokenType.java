@@ -15,12 +15,13 @@ enum TokenType {
     //sin, cos, tan, ln, atan, atan2
 
     //Regex replace with "" all matched instances
+    ATAN2("atan2"),
+    ATAN("atan"),
     SIN("sin"),
     COS("cos"),
     TAN("tan"),
     LOG("ln"),
-    ATAN2("atan2"),
-    ATAN("atan"),
+
     
 
 
