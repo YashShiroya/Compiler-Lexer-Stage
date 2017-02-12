@@ -146,7 +146,7 @@ class ExprEval {
          // For the RHS id, just call lex
             TokenStruct temp = nextToken;
             nextToken = lex();
-            return temp;
+            return Double.parseDouble(temp.data);
         }
         else if (nextToken.type.name().equals("LPAREN")) {
             nextToken = lex();
