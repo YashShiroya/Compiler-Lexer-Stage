@@ -18,7 +18,7 @@ class ExprEval {
     static int rp = 0;
 
     enum exprSign {DEFUALT, PLUS, MINUS};
-    enum termSign {DEFUALT, MULTIPLY, DIVIDE};
+    enum termSign {DEFUALT, MULTIPLY, DIVIDE, EXPONENT};
 
     private static TokenStruct nextToken = null;
 
@@ -136,10 +136,12 @@ class ExprEval {
         // As long as the next token is * or /,
         // next token and parse the next factor
         while (nextToken.type.name().equals("MULTIPLY") ||
-                 nextToken.type.name().equals("DIVIDE")) {
+                 nextToken.type.name().equals("DIVIDE") ||
+                 nextToken.type.name().equals("EXPONENT")) {
 
             if(nextToken.type.name().equals("MULTIPLY")) signt = termSign.MULTIPLY;
             else if(nextToken.type.name().equals("DIVIDE")) signt = termSign.DIVIDE;
+            else if(nextToken.type.name().equals("EXPONENT")) signt = termSign.EXPONENT;
 
             //Update nextToken
             lex();
@@ -147,6 +149,7 @@ class ExprEval {
 
             if(signt == termSign.MULTIPLY) factorLeft *= factorRight;
             else if(signt == termSign.DIVIDE) factorLeft /= factorRight;
+            else if(signt == termSign.EXPONENT) factorLeft = Math.pow(factorLeft, factorRight);
             else {System.out.print("INTERNAL: In term(), Sign not modified.");} 
 
         }
