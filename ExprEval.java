@@ -34,10 +34,6 @@ class ExprEval {
         if(it.hasNext()) { 
             nextToken = it.next();
         }
-        else {
-            System.out.println("---------\nReached end of tokens!\n---------");
-            System.exit(1);
-        }
     }    
 
     public static double evaluate(String expr, double xval) throws Exception {
