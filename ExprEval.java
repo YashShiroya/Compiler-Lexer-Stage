@@ -20,7 +20,7 @@ class ExprEval {
     TokenStruct nextToken = null;
 
 
-    void error() {
+    public static void error() {
         System.out.print("ERROR: Grammar Violated");
         exit(1);
     }
