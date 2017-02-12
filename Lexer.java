@@ -89,6 +89,7 @@ public class Lexer {
         if(lexer_debug) System.out.println("len: " + expressionReplaced.length());
 
         if(expressionReplaced.length() != 0) {
+            System.out.print("err_str:" + expressionReplaced + " \n");
             System.out.println("Error: Lexer detected unidentified tokens.");
         }
 
