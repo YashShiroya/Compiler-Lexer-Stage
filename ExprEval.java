@@ -43,7 +43,7 @@ class ExprEval {
 
         Lexer lexEval = new Lexer(expr);
 
-        String nextToken = "";
+        TokenStruct nextToken = it.next();
 
         // getter
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
@@ -57,7 +57,7 @@ class ExprEval {
         }
 
         ListIterator<TokenStruct> it = tokenList.listIterator();
-        
+
         lexEval.printTokens();
 
         double current_val = (double) 0;
