@@ -64,7 +64,7 @@ class ExprEval {
 
         if(lexEval.lexer_debug) lexEval.printTokens();
 
-        return 0;
+        return expr();
     }
 
     /*
