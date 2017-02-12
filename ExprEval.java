@@ -99,7 +99,7 @@ class ExprEval {
 
             double termRight = (double) term();
 
-            if(sign == exprSign.PLUS) termLeft += termRight;
+            if(sign == exprSign.PLUS) {termLeft += termRight; System.out.println("sum: " + termLeft);}
             else if(sign == exprSign.MINUS) termLeft -= termRight;
             else {System.out.print("INTERNAL: In expr(), Sign not modified.");} 
         }
