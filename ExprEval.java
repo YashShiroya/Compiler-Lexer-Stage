@@ -29,10 +29,10 @@ class ExprEval {
         System.exit(1);
     }
 
-    private static TokenStruct lex() {
+    private void lex() {
         
         if(it.hasNext()) { 
-            return it.next();
+            nextToken = it.next();
         }
         else {
             System.out.print("---------\nReached end of tokens!\n---------");
@@ -58,8 +58,9 @@ class ExprEval {
 
         //List iterator
         it = tokenList.listIterator();
+        
         //Init nextToken to nextToken
-        nextToken = it.next();
+        lex();
 
         if(lexEval.lexer_debug) lexEval.printTokens();
 
@@ -93,7 +94,8 @@ class ExprEval {
             if(nextToken.type.name().equals("PLUS")) sign = exprSign.PLUS;
             else if(nextToken.type.name().equals("MINUS")) sign = exprSign.MINUS;
 
-            nextToken = lex();
+            //Update nextToken
+            lex();
 
             double termRight = (double) term();
 
@@ -122,7 +124,8 @@ class ExprEval {
             if(nextToken.type.name().equals("MULTIPLY")) sign = termSign.MULTIPLY;
             else if(nextToken.type.name().equals("DIVIDE")) sign = termSign.DIVIDE;
 
-            nextToken = lex();
+            //Update nextToken
+            lex();
             double factorRight = (double) factor();
 
             if(sign == termSign.MULTIPLY) factorLeft *= factorRight;
@@ -143,9 +146,13 @@ class ExprEval {
        // Determine which RHS (Right-hand side)
 
         if (nextToken.type.name().equals("NUMBER")) {
-         // For the RHS id, just call lex
+            
+            // For the RHS id, just call lex
             TokenStruct temp = nextToken;
-            nextToken = lex();
+            
+            //Update nextToken
+            lex();
+            
             return Double.parseDouble(temp.data);
         }
         else if (nextToken.type.name().equals("LPAREN")) {
