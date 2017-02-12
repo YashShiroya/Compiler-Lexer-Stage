@@ -119,14 +119,14 @@ class ExprEval {
         while (nextToken.type.name().equals("MULTIPLY") ||
                  nextToken.type.name().equals("DIVIDE")) {
 
-            if(nextToken.type.name().equals("MULTIPLY")) sign = exprSign.MULTIPLY;
-            else if(nextToken.type.name().equals("DIVIDE")) sign = expreSign.DIVIDE;
+            if(nextToken.type.name().equals("MULTIPLY")) sign = termSign.MULTIPLY;
+            else if(nextToken.type.name().equals("DIVIDE")) sign = termSign.DIVIDE;
 
             nextToken = lex();
             double factorRight = (double) factor();
 
-            if(sign == exprSign.MULTIPLY) factorLeft *= factorRight;
-            else if(sign == exprSign.DIVIDE) factorLeft /= factorRight;
+            if(sign == termSign.MULTIPLY) factorLeft *= factorRight;
+            else if(sign == termSign.DIVIDE) factorLeft /= factorRight;
             else {System.out.print("INTERNAL: In term(), Sign not modified.");} 
 
         }
