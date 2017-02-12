@@ -116,22 +116,22 @@ class ExprEval {
       // Parse the first factor
         double factorLeft = factor();
 
-        termSign sign = termSign.DEFUALT;
+        termSign signt = termSign.DEFUALT;
 
         // As long as the next token is * or /,
         // next token and parse the next factor
         while (nextToken.type.name().equals("MULTIPLY") ||
                  nextToken.type.name().equals("DIVIDE")) {
 
-            if(nextToken.type.name().equals("MULTIPLY")) sign = termSign.MULTIPLY;
-            else if(nextToken.type.name().equals("DIVIDE")) sign = termSign.DIVIDE;
+            if(nextToken.type.name().equals("MULTIPLY")) signt = termSign.MULTIPLY;
+            else if(nextToken.type.name().equals("DIVIDE")) signt = termSign.DIVIDE;
 
             //Update nextToken
             lex();
             double factorRight = (double) factor();
 
-            if(sign == termSign.MULTIPLY) factorLeft *= factorRight;
-            else if(sign == termSign.DIVIDE) factorLeft /= factorRight;
+            if(signt == termSign.MULTIPLY) factorLeft *= factorRight;
+            else if(signt == termSign.DIVIDE) factorLeft /= factorRight;
             else {System.out.print("INTERNAL: In term(), Sign not modified.");} 
 
         }
