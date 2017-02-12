@@ -215,11 +215,11 @@ class ExprEval {
                     //Update nextToken
                     lex();
 
-                    if(nextToken.type.name().equals("SIN")) factorVal = Math.sin(factorVal);
-                    else if(nextToken.type.name().equals("COS")) factorVal = Math.cos(factorVal);
-                    else if(nextToken.type.name().equals("TAN")) factorVal = Math.tan(factorVal);
-                    else if(nextToken.type.name().equals("LOG")) factorVal = Math.log(factorVal);
-                    else if(nextToken.type.name().equals("ATAN")) factorVal = Math.atan(factorVal);
+                    if(function.type.name().equals("SIN")) factorVal = Math.sin(factorVal);
+                    else if(function.type.name().equals("COS")) factorVal = Math.cos(factorVal);
+                    else if(function.type.name().equals("TAN")) factorVal = Math.tan(factorVal);
+                    else if(function.type.name().equals("LOG")) factorVal = Math.log(factorVal);
+                    else if(function.type.name().equals("ATAN")) factorVal = Math.atan(factorVal);
 
                     return factorVal;
 
