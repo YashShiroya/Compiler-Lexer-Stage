@@ -26,7 +26,7 @@ class ExprEval {
 
     public static void error() {
         System.out.print("ERROR: Grammar Violated");
-        exit(1);
+        System.exit(1);
     }
 
     TokenStruct lex() {
@@ -36,7 +36,7 @@ class ExprEval {
         }
         else {
             System.out.print("---------\nReached end of tokens!\n---------");
-            exit(1);
+            System.exit(1);
         }
     }    
 
