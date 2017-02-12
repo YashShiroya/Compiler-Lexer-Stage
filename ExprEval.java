@@ -236,6 +236,51 @@ class ExprEval {
             //________
 
         }
+        // atan2 '(' <expr> ',' <expr> ')'
+        else if(nextToken.type.name().equals("ATAN2")) {
+        
+            //Evaluate inner expression
+            //Update nextToken
+            lex();
+
+            //Check for parameters
+            if(nextToken.type.name().equals("LPAREN")) {
+
+                //Check for param1
+                //Update nextToken
+                lex();
+                double paramLeft = (double) expr();
+
+                // //Check for comma
+                // lex();
+
+                if(nextToken.type.name().equals("COMMA")) {
+                    
+                    //Check for param2
+                    lex();
+
+                    double paramRight = (double) expr();
+
+                    // //check for RPAREN
+                    // lex();
+
+                    if (nextToken.type.name().equals("RPAREN")) {
+
+                        //Update nextToken
+                        factorVal = Math.atan2(paramLeft, paramRight);
+                        lex();
+                        return factorVal;
+
+                    }
+                    else error();
+
+                }
+                else error();
+
+            }
+            else error();
+
+        }
         else error();
         return factorVal;
     }

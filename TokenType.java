@@ -26,6 +26,7 @@ enum TokenType {
     LPAREN("\\("),
     RPAREN("\\)"),
 
+    COMMA("\\,")
     VAR("x");
 
     public final String pattern;
