@@ -27,7 +27,7 @@ class ExprEval {
     //     return 0;
     // }
 
-    TokenStruct lex() {
+    TokenStruct lex(ListIterator<TokenStruct> it) {
         if(it.hasNext()) { 
             return it.next();
         }
