@@ -19,20 +19,24 @@ class ExprEval {
 
     private static TokenStruct nextToken = null;
 
+    private ArrayList<TokenStruct> tokenList = null;
+
+    private ListIterator<TokenStruct> it = null;
+
 
     public static void error() {
         System.out.print("ERROR: Grammar Violated");
         exit(1);
     }
 
-    TokenStruct lex(ListIterator<TokenStruct> it) {
+    TokenStruct lex() {
         
         if(it.hasNext()) { 
             return it.next();
         }
         else {
             System.out.print("---------\nReached end of tokens!\n---------");
-            return null;
+            exit(1);
         }
     }    
 
@@ -41,7 +45,7 @@ class ExprEval {
         Lexer lexEval = new Lexer(expr);
 
         // Getter gets private TokenList
-        ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
+        tokenList = lexEval.releaseTokenList();
 
         //Change variable to actual "NUMBER"
         for (TokenStruct t : tokenList) {
@@ -53,7 +57,7 @@ class ExprEval {
         }
 
         //List iterator
-        ListIterator<TokenStruct> it = tokenList.listIterator();
+        it = tokenList.listIterator();
         //Init nextToken to nextToken
         nextToken = it.next();
 
@@ -137,7 +141,7 @@ class ExprEval {
 
     public static double factor() {
        // Determine which RHS (Right-hand side)
-        double factorVal = (double) 0;
+
         if (nextToken.type.name().equals("NUMBER")) {
          // For the RHS id, just call lex
             TokenStruct temp = nextToken;
@@ -146,7 +150,7 @@ class ExprEval {
         }
         else if (nextToken.type.name().equals("LPAREN")) {
             nextToken = lex();
-            factorVal = expr();
+            return expr();
             if (nextToken.type.name().equals("RPAREN")) {
                 nextToken = lex();
             }
@@ -156,8 +160,6 @@ class ExprEval {
 
         }
         else error();
-
-        return factorVal;
     }
 }
 
