@@ -27,11 +27,11 @@ class ExprEval {
     //     return 0;
     // }
 
-    ListIterator<ArrayList<TokenStruct>> it = tokenList.listIterator();
+    ListIterator<TokenStruct> it = tokenList.listIterator();
 
     TokenStruct lex() {
         if(it.hasNext()) { 
-            return it.next().type.name();
+            return it.next();
         }
         else {
             System.out.print("---------\nReached end of tokens!\n---------");
