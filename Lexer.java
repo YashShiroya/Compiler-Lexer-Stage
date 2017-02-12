@@ -79,14 +79,14 @@ public class Lexer {
 
             for(TokenType t: TokenType.values()) {
                expressionReplaced = expressionReplaced.replaceAll(t.pattern, "");
-               if(lexer_debug) {
+               if(true) {
                     System.out.println("exp replaced " + t.name() + ": " + expressionReplaced);
                }
             }
         
         //________________
         
-        if(true) System.out.println("len: " + expressionReplaced.length());
+        if(lexer_debug) System.out.println("len: " + expressionReplaced.length());
 
         if(expressionReplaced.length() != 0) {
             System.out.print("err_str:" + expressionReplaced + " \n");
