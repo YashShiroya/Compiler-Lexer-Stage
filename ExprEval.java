@@ -66,7 +66,7 @@ class ExprEval {
         double exprVal = expr();
 
         if(it.hasNext()) error();
-        if((lp - rp) == 0) error();
+        if((lp - rp) != 0) error();
 
         return exprVal;
     }
