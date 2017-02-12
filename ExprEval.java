@@ -17,6 +17,8 @@ class ExprEval {
     enum exprSign {DEFUALT, PLUS, MINUS};
     enum termSign {DEFUALT, MULTIPLY, DIVIDE};
 
+    TokenStruct nextToken = null;
+
 
     void error() {
         System.out.print("ERROR: Grammar Violated");
@@ -53,8 +55,7 @@ class ExprEval {
         //List iterator
         ListIterator<TokenStruct> it = tokenList.listIterator();
         //Init nextToken to nextToken
-        TokenStruct nextToken = it.next();
-
+        nextToken = it.next();
 
         if(lexEval.lexer_debug) lexEval.printTokens();
 
