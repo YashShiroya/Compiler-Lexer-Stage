@@ -70,7 +70,7 @@ class ExprEval {
             error();
         }
         if((lp - rp) != 0) error();
-        System.out.println("lp-rp" + (lp+rp));
+        System.out.println("lp-rp " + (lp-rp));
 
         return exprVal;
     }
