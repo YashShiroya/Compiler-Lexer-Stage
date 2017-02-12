@@ -173,7 +173,7 @@ class ExprEval {
             lex();
             return Double.parseDouble(temp.data);
         }
-        else if (nextToken.type.name().equals("LPAREN")) {
+        else if(nextToken.type.name().equals("LPAREN")) {
 
             //Update nextToken
             lex();
@@ -190,6 +190,47 @@ class ExprEval {
             else {
                 error();
             }
+
+        }
+        else if(nextToken.type.name().equals("SIN") ||
+                nextToken.type.name().equals("COS") ||
+                nextToken.type.name().equals("TAN") ||
+                nextToken.type.name().equals("LOG") ||
+                nextToken.type.name().equals("ATAN")) {
+
+            TokenStruct function = nextToken;
+            //Evaluate inner expression
+            //Update nextToken
+            lex();
+
+            if(nextToken.type.name().equals("LPAREN")) {
+
+                //Update nextToken
+                lex();
+
+                factorVal = expr();
+                
+                if (nextToken.type.name().equals("RPAREN")) {
+
+                    //Update nextToken
+                    lex();
+
+                    if(nextToken.type.name().equals("SIN")) factorVal = Math.sin(factorVal);
+                    else if(nextToken.type.name().equals("COS")) factorVal = Math.cos(factorVal);
+                    else if(nextToken.type.name().equals("TAN")) factorVal = Math.tan(factorVal);
+                    else if(nextToken.type.name().equals("LOG")) factorVal = Math.log(factorVal);
+                    else if(nextToken.type.name().equals("ATAN")) factorVal = Math.atan(factorVal);
+
+                    return factorVal;
+
+                }
+                else {
+                    error();
+                }
+
+            }
+
+            //________
 
         }
         else error();
