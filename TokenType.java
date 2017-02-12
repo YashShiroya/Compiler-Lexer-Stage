@@ -4,17 +4,9 @@
 // remember that in Java, each enum case is sortof like an object that can hold its own data -- this is very different from enums in C
 enum TokenType {
 
-    NUMBER("[0-9]+(\\.[0-9]+)?"),
-
-    PLUS("\\+"),
-    MINUS("\\-"),
-    MULTIPLY("\\*"),
-    DIVIDE("\\/"),
-    EXPONENT("\\^"),
+    //Regex replace with "" all matched instances
 
     //sin, cos, tan, ln, atan, atan2
-
-    //Regex replace with "" all matched instances
     ATAN2("atan2"),
     ATAN("atan"),
     SIN("sin"),
@@ -22,8 +14,13 @@ enum TokenType {
     TAN("tan"),
     LOG("ln"),
 
-    
+    NUMBER("[0-9]+(\\.[0-9]+)?"),
 
+    PLUS("\\+"),
+    MINUS("\\-"),
+    MULTIPLY("\\*"),
+    DIVIDE("\\/"),
+    EXPONENT("\\^"),
 
     LPAREN("\\("),
     RPAREN("\\)"),
