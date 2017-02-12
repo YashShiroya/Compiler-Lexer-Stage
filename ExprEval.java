@@ -12,7 +12,7 @@ class ExprEval {
       System.out.println("y="+val);
     }
 
-    boolean static timeline = true;
+    static boolean timeline = true;
 
     enum exprSign {DEFUALT, PLUS, MINUS};
     enum termSign {DEFUALT, MULTIPLY, DIVIDE};
