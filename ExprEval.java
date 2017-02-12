@@ -29,7 +29,7 @@ class ExprEval {
         System.exit(1);
     }
 
-    TokenStruct lex() {
+    private static TokenStruct lex() {
         
         if(it.hasNext()) { 
             return it.next();
