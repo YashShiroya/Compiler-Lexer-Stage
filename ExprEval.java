@@ -14,20 +14,9 @@ class ExprEval {
 
     boolean timeline = false;
 
-    // int accept(TokenType type) {
-    //     if (sym == s) {
-    //         nextsym();
-    //         return 1;
-    //     }
-    //     return 0;
-    // }
+    enum exprSign {DEFUALT, PLUS, MINUS};
+    enum termSign {DEFUALT, MULTIPLY, DIVIDE};
 
-    // int expect(TokenType type) {
-    //     if (accept(s))
-    //         return 1;
-    //     error("expect: unexpected symbol");
-    //     return 0;
-    // }
 
     void error() {
         System.out.print("ERROR: Grammar Violated");
@@ -88,7 +77,6 @@ class ExprEval {
 
         double termLeft = (double) term();
 
-        enum exprSign {DEFUALT, PLUS, MINUS};
         exprSign sign = exprSign.DEFUALT;
 
         // As long as the next token is + or -, call
@@ -119,7 +107,6 @@ class ExprEval {
       // Parse the first factor
         double factorLeft = factor();
 
-        enum termSign {DEFUALT, MULTIPLY, DIVIDE};
         termSign sign = termSign.DEFUALT;
 
         // As long as the next token is * or /,
