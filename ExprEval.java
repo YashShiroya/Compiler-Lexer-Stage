@@ -12,7 +12,7 @@ class ExprEval {
       System.out.println("y="+val);
     }
 
-    boolean timeline = false;
+    boolean timeline = true;
 
     enum exprSign {DEFUALT, PLUS, MINUS};
     enum termSign {DEFUALT, MULTIPLY, DIVIDE};
@@ -53,7 +53,7 @@ class ExprEval {
                 t.type = TokenType.NUMBER;
                 t.data = Double.toString(xval);
             }
-            if(lexEval.lexer_debug) System.out.println(t.data);
+            if(timeline) System.out.println(t.data);
         }
 
         //List iterator
