@@ -53,7 +53,7 @@ class ExprEval {
                 t.type = TokenType.NUMBER;
                 t.data = Double.toString(xval);
             }
-            if(timeline) System.out.println(t.data);
+            //if(timeline) System.out.println(t.data);
         }
 
         //List iterator
@@ -62,7 +62,7 @@ class ExprEval {
         //Init nextToken to nextToken
         lex();
 
-        if(lexEval.lexer_debug) lexEval.printTokens();
+        if(timeline) lexEval.printTokens();
 
         return expr();
     }
