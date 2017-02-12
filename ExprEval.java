@@ -29,7 +29,7 @@ class ExprEval {
         System.exit(1);
     }
 
-    private void lex() {
+    private static void lex() {
         
         if(it.hasNext()) { 
             nextToken = it.next();
