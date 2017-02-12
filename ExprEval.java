@@ -60,7 +60,11 @@ class ExprEval {
 
         if(timeline) lexEval.printTokens();
 
-        return expr();
+        double exprVal = expr();
+
+        if(it.hasNext()) error();
+
+        return exprVal;
     }
 
     /*
