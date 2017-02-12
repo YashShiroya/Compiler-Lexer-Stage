@@ -42,14 +42,14 @@ class ExprEval {
 
         Lexer lexEval = new Lexer(expr);
 
-        String nextToken = ;
+        String nextToken = "";
 
 
         // getter
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
 
         for (TokenStruct t : tokenList) {
-            if(t.type.name() == "VAR") {
+            if(t.type.name().equals("VAR")) {
                 t.type = TokenType.NUMBER;
                 t.data = Double.toString(xval);
             }
