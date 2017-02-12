@@ -65,8 +65,12 @@ class ExprEval {
 
         double exprVal = expr();
 
-        if(it.hasNext()) error();
+        TokenStruct checkLp = null;
+        if(it.hasNext()) {
+            error();
+        }
         if((lp - rp) != 0) error();
+        System.out.println("lp-rp" + (lp+rp));
 
         return exprVal;
     }
