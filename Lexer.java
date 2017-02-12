@@ -86,7 +86,7 @@ public class Lexer {
         
         //________________
         
-        if(lexer_debug) System.out.println("len: " + expressionReplaced.length());
+        if(true) System.out.println("len: " + expressionReplaced.length());
 
         if(expressionReplaced.length() != 0) {
             System.out.print("err_str:" + expressionReplaced + " \n");
