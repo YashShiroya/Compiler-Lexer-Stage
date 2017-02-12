@@ -52,6 +52,12 @@ class ExprEval {
                 t.type = TokenType.NUMBER;
                 t.data = Double.toString(xval);
             }
+            if(t.type.name().equals("LPAREN")) {
+                lp++;
+            }
+            if(t.type.name().equals("RPAREN")) {
+                rp++;
+            }
             //if(timeline) System.out.println(t.data);
         }
 
@@ -65,12 +71,11 @@ class ExprEval {
 
         double exprVal = expr();
 
-        TokenStruct checkLp = null;
+        //Error Handling of grammar
         if(it.hasNext()) {
             error();
         }
-        if((lp - rp) != 0) error();
-        System.out.println("lp-rp " + (lp-rp));
+        if((lp-rp) != 0) error();
 
         return exprVal;
     }
@@ -171,15 +176,14 @@ class ExprEval {
             return Double.parseDouble(temp.data);
         }
         else if (nextToken.type.name().equals("LPAREN")) {
-            
-            lp++;
+
             //Update nextToken
             lex();
 
             factorVal = expr();
             
             if (nextToken.type.name().equals("RPAREN")) {
-                rp++;
+
                 //Update nextToken
                 lex();
                 return factorVal;
