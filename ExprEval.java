@@ -25,7 +25,7 @@ class ExprEval {
 
 
     public static void error() {
-        System.out.print("ERROR: Grammar Violated");
+        System.out.println("ERROR: Grammar Violated");
         System.exit(1);
     }
 
@@ -93,11 +93,11 @@ class ExprEval {
             //Update nextToken
             lex();
 
-            System.out.println("exprSign: h1 " + sign);
+            // System.out.println("exprSign: h1 " + sign);
 
             double termRight = (double) term();
 
-            System.out.println("exprSign: h2 " + sign);
+            // System.out.println("exprSign: h2 " + sign);
 
             if(sign == exprSign.PLUS) {termLeft += termRight; System.out.println("sum: " + termLeft);}
             else if(sign == exprSign.MINUS) termLeft -= termRight;
