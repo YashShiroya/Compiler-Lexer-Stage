@@ -91,7 +91,7 @@ class ExprEval {
                  nextToken.type.name().equals("MINUS")) {
 
             if(nextToken.type.name().equals("PLUS")) sign = exprSign.PLUS;
-            else if(nextToken.type.name().equals("MINUS")) sign = expreSign.MINUS;
+            else if(nextToken.type.name().equals("MINUS")) sign = exprSign.MINUS;
 
             nextToken = lex();
 
