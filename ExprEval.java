@@ -154,7 +154,7 @@ class ExprEval {
             
             //Update nextToken
             lex();
-            
+            System.out.println("number: " + nextToken.data);
             return Double.parseDouble(temp.data);
         }
         else if (nextToken.type.name().equals("LPAREN")) {
