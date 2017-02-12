@@ -28,12 +28,15 @@ class ExprEval {
     // }
 
     TokenStruct lex(ListIterator<TokenStruct> it) {
+        
         if(it.hasNext()) { 
             return it.next();
         }
         else {
             System.out.print("---------\nReached end of tokens!\n---------");
         }
+
+        return null;
     }    
 
     public static double evaluate(String expr, double xval) throws Exception {
