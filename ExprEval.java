@@ -19,9 +19,9 @@ class ExprEval {
 
     private static TokenStruct nextToken = null;
 
-    private ArrayList<TokenStruct> tokenList = null;
+    private static ArrayList<TokenStruct> tokenList = null;
 
-    private ListIterator<TokenStruct> it = null;
+    private static ListIterator<TokenStruct> it = null;
 
 
     public static void error() {
