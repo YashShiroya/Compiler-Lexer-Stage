@@ -14,6 +14,9 @@ class ExprEval {
 
     static boolean timeline = true;
 
+    static int lp = 0;
+    static int rp = 0;
+
     enum exprSign {DEFUALT, PLUS, MINUS};
     enum termSign {DEFUALT, MULTIPLY, DIVIDE};
 
@@ -63,6 +66,7 @@ class ExprEval {
         double exprVal = expr();
 
         if(it.hasNext()) error();
+        if((lp - rp) == 0) error();
 
         return exprVal;
     }
@@ -164,13 +168,14 @@ class ExprEval {
         }
         else if (nextToken.type.name().equals("LPAREN")) {
             
+            lp++;
             //Update nextToken
             lex();
 
             factorVal = expr();
             
             if (nextToken.type.name().equals("RPAREN")) {
-                
+                rp++;
                 //Update nextToken
                 lex();
                 return factorVal;
