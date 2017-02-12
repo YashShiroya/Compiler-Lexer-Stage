@@ -20,6 +20,7 @@ public class Lexer {
     public void printTokens() {
         for (TokenStruct t : tokenStructs) {
             System.out.printf("%s ", t.toString());
+            System.out.print("\n");
         }
 	System.out.print("\n");
     }
