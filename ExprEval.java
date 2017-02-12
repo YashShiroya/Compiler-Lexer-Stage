@@ -38,14 +38,14 @@ class ExprEval {
 
     public static double evaluate(String expr, double xval) throws Exception {
 
-        ListIterator<TokenStruct> it = tokenList.listIterator();
-
         Lexer lexEval = new Lexer(expr);
 
         String nextToken = "";
 
         // getter
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
+
+        ListIterator<TokenStruct> it = tokenList.listIterator();
 
         for (TokenStruct t : tokenList) {
             if(t.type.name().equals("VAR")) {
