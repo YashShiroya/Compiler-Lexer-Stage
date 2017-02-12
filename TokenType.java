@@ -19,14 +19,15 @@ enum TokenType {
     COS("cos"),
     TAN("tan"),
     LOG("ln"),
-    ATAN("atan"),
     ATAN2("atan2"),
+    ATAN("atan"),
+    
 
 
     LPAREN("\\("),
     RPAREN("\\)"),
 
-    COMMA(","),
+    COMMA("\\,"),
     VAR("x");
 
     public final String pattern;
