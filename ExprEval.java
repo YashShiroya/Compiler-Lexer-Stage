@@ -27,8 +27,6 @@ class ExprEval {
     //     return 0;
     // }
 
-    ListIterator<TokenStruct> it = tokenList.listIterator();
-
     TokenStruct lex() {
         if(it.hasNext()) { 
             return it.next();
@@ -40,10 +38,11 @@ class ExprEval {
 
     public static double evaluate(String expr, double xval) throws Exception {
 
+        ListIterator<TokenStruct> it = tokenList.listIterator();
+
         Lexer lexEval = new Lexer(expr);
 
         String nextToken = "";
-
 
         // getter
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
