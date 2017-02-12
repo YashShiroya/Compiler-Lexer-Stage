@@ -35,7 +35,7 @@ class ExprEval {
             nextToken = it.next();
         }
         else {
-            System.out.print("---------\nReached end of tokens!\n---------");
+            System.out.println("---------\nReached end of tokens!\n---------");
             System.exit(1);
         }
     }    
