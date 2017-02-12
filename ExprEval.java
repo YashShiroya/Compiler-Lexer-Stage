@@ -158,7 +158,7 @@ class ExprEval {
         }
         else if (nextToken.type.name().equals("LPAREN")) {
             nextToken = lex();
-            expr();
+            factorVal = expr();
             if (nextToken.type.name().equals("RPAREN")) {
                 nextToken = lex();
             }
@@ -168,6 +168,8 @@ class ExprEval {
 
         }
         else error();
+
+        return factorVal;
     }
 }
 
