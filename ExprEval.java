@@ -43,11 +43,10 @@ class ExprEval {
 
         Lexer lexEval = new Lexer(expr);
 
-        TokenStruct nextToken = it.next();
-
-        // getter
+        // Getter gets private TokenList
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
 
+        //Change variable to actual "NUMBER"
         for (TokenStruct t : tokenList) {
             if(t.type.name().equals("VAR")) {
                 t.type = TokenType.NUMBER;
@@ -56,9 +55,12 @@ class ExprEval {
             if(lexEval.lexer_debug) System.out.println(t.data);
         }
 
+        //List iterator
         ListIterator<TokenStruct> it = tokenList.listIterator();
+        //Init nextToken to nextToken
+        TokenStruct nextToken = it.next();
 
-        lexEval.printTokens();
+        if(lexEval.lexer_debug) lexEval.printTokens();
 
         double current_val = (double) 0;
 
