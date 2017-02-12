@@ -145,6 +145,8 @@ class ExprEval {
     public static double factor() {
        // Determine which RHS (Right-hand side)
 
+        double factorVal = (double) 0;
+
         if (nextToken.type.name().equals("NUMBER")) {
             
             // For the RHS id, just call lex
@@ -156,10 +158,18 @@ class ExprEval {
             return Double.parseDouble(temp.data);
         }
         else if (nextToken.type.name().equals("LPAREN")) {
-            nextToken = lex();
-            return expr();
+            
+            //Update nextToken
+            lex();
+
+            factorVal = expr();
+            
             if (nextToken.type.name().equals("RPAREN")) {
-                nextToken = lex();
+                
+                //Update nextToken
+                lex();
+                return factorVal;
+
             }
             else {
                 error();
