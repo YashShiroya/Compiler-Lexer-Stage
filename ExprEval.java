@@ -48,8 +48,6 @@ class ExprEval {
         // getter
         ArrayList<TokenStruct> tokenList = lexEval.releaseTokenList();
 
-        ListIterator<TokenStruct> it = tokenList.listIterator();
-
         for (TokenStruct t : tokenList) {
             if(t.type.name().equals("VAR")) {
                 t.type = TokenType.NUMBER;
@@ -58,7 +56,8 @@ class ExprEval {
             if(lexEval.lexer_debug) System.out.println(t.data);
         }
 
-
+        ListIterator<TokenStruct> it = tokenList.listIterator();
+        
         lexEval.printTokens();
 
         double current_val = (double) 0;
