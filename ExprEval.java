@@ -177,6 +177,8 @@ class ExprEval {
 
         }
         else error();
+        System.out.print("INTERNAL: In factor(), Ending in null.");
+        return null;
     }
 }
 
