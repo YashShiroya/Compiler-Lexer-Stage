@@ -94,12 +94,12 @@ class ExprEval {
             if(nextToken.type.name().equals("PLUS")) sign = exprSign.PLUS;
             else if(nextToken.type.name().equals("MINUS")) sign = exprSign.MINUS;
 
-            System.out.println("exprSign: " + sign);
-
             //Update nextToken
             lex();
 
             double termRight = (double) term();
+
+            System.out.println("exprSign: " + sign);
 
             if(sign == exprSign.PLUS) {termLeft += termRight; System.out.println("sum: " + termLeft);}
             else if(sign == exprSign.MINUS) termLeft -= termRight;
