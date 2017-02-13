@@ -117,9 +117,11 @@ TOKEN :
 
 //Begin Grammar
 
-void goal(): {} { program() <EOF>}
+void goal() : {} {
+    program() <EOF>
+}
 
-void program(): {} { 
+void program() : {} {
     function_or_var_list()
 }
 
@@ -128,7 +130,7 @@ void function_or_var_list(): {} {
 }
 
 void function(): {} {
-    var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
+    <LPARENT> arguments() <RPARENT> compound_statement()
 }
 
 void arg_list(): {} {
@@ -144,11 +146,11 @@ void arg(): {} {
 }
 
 void global_var(): {} {
-    var_type()  global_var_list() <SEMICOLON>
+    global_var_list() <SEMICOLON>
 }
 
 void global_var_list(): {} {
-    <ID> (<COMMA> <ID>)*
+    (<COMMA> <ID>)*
 }
 
 void var_type(): {} {
@@ -156,11 +158,11 @@ void var_type(): {} {
 }
 
 void assignment(): {} {
-    <ID> ( <EQUAL> expression() | <LBRACE> expression() <RBRACE> <EQUAL> expression())
+    (<EQUAL> |  <LBRACE> expression() <RBRACE> <EQUAL>) expression()
 }
 
 void call(): {} {
-    <ID> <LPARENT> call_arguments() <RPARENT>
+    <LPARENT> call_arguments() <RPARENT>
 }
 
 void call_arg_list(): {} {
@@ -179,43 +181,39 @@ void logical_or_expr(): {} {
     logical_and_expr() (<OROR> logical_and_expr())*
 }
 
-void logical_and_expr(): {}
-{
+void logical_and_expr(): {} {
     equality_expr() (<ANDAND> equality_expr())*
 }
 
-void equality_expr(): {}
-{
+void equality_expr(): {} {
     relational_expr() (<EQUALEQUAL> relational_expr() | <NOTEQUAL> relational_expr())*
 }
 
-void relational_expr(): {}
-{
-    additive_expr() (<LESS> additive_expr() | <GREAT> additive_expr() | <LESSEQUAL> additive_expr() | <GREATEQUAL> relational_expr())*
+void relational_expr(): {} {
+    additive_expr() (<LESS> additive_expr() | <GREAT> additive_expr() | <LESSEQUAL> additive_expr() | <GREATEQUAL> additive_expr())*
 }
 
-void additive_expr(): {}
-{
-    multiplicative_expr() (<PLUS> multiplicative_expr() | <MINUS> multiplicative_expr())*
+void additive_expr(): {} {
+    multiplicative_expr() ( (<PLUS> | <MINUS>) multiplicative_expr() )*
 }
 
-void multiplicative_expr(): {}
-{
+void multiplicative_expr(): {} {
     unary_expr() (<TIMES> multiplicative_expr() | <DIVIDE> multiplicative_expr() | <PERCENT> multiplicative_expr())*
 }
 
-void unary_expr(): {}
-{
-    primary_expr() | <PLUS> 
+void unary_expr(): {} {
+    primary_expr() | ((<PLUS> | <MINUS> | <AMPERSAND> | <TIMES>) primary_expr())+
 }
 
-void compound_statement(): {}
-{
+void primary_expr(): {} {
+    <STRING_CONST> | <ID> (<LBRACE> expression() <RBRACE> | call())? | <INTEGER_CONST> | <DOUBLE_CONST> | <LPARENT> expression() <RPARENT>
+}
+
+void compound_statement(): {} {
     <LCURLY> statement_list() <RCURLY>
 }
 
-void statement_list(): {}
-{
+void statement_list(): {} {
     (statement())*
 }
 
