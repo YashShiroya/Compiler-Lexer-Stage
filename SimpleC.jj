@@ -180,7 +180,7 @@ void expression(): {} {
 }
 
 void logical_or_expr(): {} {
-    logical_and_expr (<OROR> logical_and_expr())*
+    logical_and_expr() (<OROR> logical_and_expr())*
 }
 
 
