@@ -44,14 +44,16 @@ void goal() throws ParseException {
   }
 
   static final public void function_or_var_list() throws ParseException {
-    var_type();
-    jj_consume_token(ID);
     label_1:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case LPARENT:
-      case COMMA:
-      case SEMICOLON:{
+      case CHARSTARSTAR:
+      case CHARSTAR:
+      case LONGSTAR:
+      case LONG:
+      case VOID:
+      case DOUBLESTAR:
+      case DOUBLE:{
         ;
         break;
         }
@@ -60,12 +62,16 @@ void goal() throws ParseException {
         break label_1;
       }
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case LPARENT:{
+      case CHARSTARSTAR:
+      case CHARSTAR:
+      case LONGSTAR:
+      case LONG:
+      case VOID:
+      case DOUBLESTAR:
+      case DOUBLE:{
         function();
         break;
-        }
-      case COMMA:
-      case SEMICOLON:{
+        }{
         global_var();
         break;
         }
@@ -78,6 +84,8 @@ void goal() throws ParseException {
   }
 
   static final public void function() throws ParseException {
+    var_type();
+    jj_consume_token(ID);
     jj_consume_token(LPARENT);
     arguments();
     jj_consume_token(RPARENT);
@@ -126,11 +134,13 @@ void goal() throws ParseException {
   }
 
   static final public void global_var() throws ParseException {
+    var_type();
     global_var_list();
     jj_consume_token(SEMICOLON);
   }
 
   static final public void global_var_list() throws ParseException {
+    jj_consume_token(ID);
     label_3:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -185,9 +195,11 @@ void goal() throws ParseException {
   }
 
   static final public void assignment() throws ParseException {
+    jj_consume_token(ID);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case EQUAL:{
       jj_consume_token(EQUAL);
+      expression();
       break;
       }
     case LBRACE:{
@@ -195,6 +207,7 @@ void goal() throws ParseException {
       expression();
       jj_consume_token(RBRACE);
       jj_consume_token(EQUAL);
+      expression();
       break;
       }
     default:
@@ -202,10 +215,10 @@ void goal() throws ParseException {
       jj_consume_token(-1);
       throw new ParseException();
     }
-    expression();
   }
 
   static final public void call() throws ParseException {
+    jj_consume_token(ID);
     jj_consume_token(LPARENT);
     call_arguments();
     jj_consume_token(RPARENT);
@@ -438,6 +451,7 @@ void goal() throws ParseException {
     }
   }
 
+//This
   static final public void unary_expr() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case LPARENT:
@@ -499,6 +513,7 @@ void goal() throws ParseException {
     }
   }
 
+//This
   static final public void primary_expr() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case STRING_CONST:{
@@ -508,8 +523,8 @@ void goal() throws ParseException {
     case ID:{
       jj_consume_token(ID);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case LPARENT:
-      case LBRACE:{
+      case LBRACE:
+      case ID:{
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
         case LBRACE:{
           jj_consume_token(LBRACE);
@@ -517,7 +532,7 @@ void goal() throws ParseException {
           jj_consume_token(RBRACE);
           break;
           }
-        case LPARENT:{
+        case ID:{
           call();
           break;
           }
@@ -565,10 +580,7 @@ void goal() throws ParseException {
     label_12:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case LPARENT:
       case LCURLY:
-      case LBRACE:
-      case EQUAL:
       case CHARSTARSTAR:
       case CHARSTAR:
       case LONGSTAR:
@@ -582,7 +594,8 @@ void goal() throws ParseException {
       case BREAK:
       case RETURN:
       case DOUBLESTAR:
-      case DOUBLE:{
+      case DOUBLE:
+      case ID:{
         ;
         break;
         }
@@ -620,13 +633,11 @@ void goal() throws ParseException {
 
   static final public void statement() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case LBRACE:
-    case EQUAL:{
+    case ID:{
       assignment();
       jj_consume_token(SEMICOLON);
       break;
-      }
-    case LPARENT:{
+      }{
       call();
       jj_consume_token(SEMICOLON);
       break;
@@ -773,10 +784,10 @@ void goal() throws ParseException {
       jj_la1_init_1();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0xc100,0xc100,0x4000,0x80000000,0x4000,0x80000000,0x11000,0x4000,0x1c040100,0x80000,0x20000,0x300000,0x300000,0x3c00000,0x3c00000,0xc000000,0xc000000,0x70000000,0x70000000,0x1c040000,0x1c040000,0x1c040100,0x1100,0x1100,0x100,0x80011500,0x4000,0x80011500,0x0,0x0,0x1c040100,};
+      jj_la1_0 = new int[] {0x80000000,0x80000000,0x4000,0x80000000,0x4000,0x80000000,0x11000,0x4000,0x1c040100,0x80000,0x20000,0x300000,0x300000,0x3c00000,0x3c00000,0xc000000,0xc000000,0x70000000,0x70000000,0x1c040000,0x1c040000,0x1c040100,0x1000,0x1000,0x100,0x80000400,0x4000,0x80000400,0x0,0x0,0x1c040100,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x0,0x0,0x0,0x300f,0x0,0x300f,0x0,0x0,0x74000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x74000,0x0,0x0,0x74000,0x3fdf,0x0,0x3fdf,0x20,0xe00,0x74000,};
+      jj_la1_1 = new int[] {0x300f,0x300f,0x0,0x300f,0x0,0x300f,0x0,0x0,0x74000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x74000,0x4000,0x4000,0x74000,0x7fdf,0x0,0x7fdf,0x20,0xe00,0x74000,};
    }
 
   /** Constructor with InputStream. */
