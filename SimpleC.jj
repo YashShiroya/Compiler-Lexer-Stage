@@ -123,12 +123,16 @@ void program() : {} {
     function_or_var_list()
 }
 
+//This
 void function_or_var_list(): {} {
-    (function() | global_var())*
+    // (function() | global_var())*
+    var_type() <ID> (function() | global_var())*
 }
 
+//This
 void function(): {} {
-   var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
+   // var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
+    <LPARENT> arguments() <RPARENT> compound_statement()
 }
 
 void arg_list(): {} {
@@ -143,12 +147,16 @@ void arg(): {} {
     var_type() <ID>
 }
 
+//This
 void global_var(): {} {
-    var_type() global_var_list() <SEMICOLON>
+    // var_type() global_var_list() <SEMICOLON>
+    global_var_list() <SEMICOLON>
 }
 
+//This
 void global_var_list(): {} {
-    <ID> (<COMMA> <ID>)*
+    // <ID> (<COMMA> <ID>)*
+    (<COMMA> <ID>)*
 }
 
 void var_type(): {} {
