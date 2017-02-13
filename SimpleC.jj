@@ -127,7 +127,9 @@ void function_or_var_list(): {} {
     var_type() <ID> (function() | global_var())*
 }
 
-//template void goal(): {} { }
+//void goal(): {} {
+    
+//}
 
 void function(): {} {
     var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
@@ -138,8 +140,24 @@ void arg_list(): {} {
 }
 
 void arguments(): {} {
-    
+    (arg_list())?
 }
+
+void arg(): {} {
+    vart_type() <ID>
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
