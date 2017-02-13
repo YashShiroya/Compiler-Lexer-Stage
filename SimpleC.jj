@@ -225,7 +225,17 @@ void local_var_list(): {} {
     <ID> (<COMMA> <ID>)*
 }
 
-
+void statement(): {} {
+    (assignment() <SEMICOLON>)
+    | (call() <SEMICOLON>)
+    | (local_var())
+    | (compound_statement())
+    | <IF> <LPARENT> expression() <RPARENT> statement() else_optional()
+    | <WHILE> <LPARENT> expression() <RPARENT> statement()
+    | <DO> statement() <WHILE> <LPARENT> expression() <RPARENT> <SEMICOLON>
+    | <FOR> <LPARENT> assignment() <SEMICOLON> expression() <SEMICOLON>  assignment() <RPARENT> statement()
+    | jump_statement()
+}
 
 
 
