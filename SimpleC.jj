@@ -144,14 +144,20 @@ void arguments(): {} {
 }
 
 void arg(): {} {
-    vart_type() <ID>
+    var_type() <ID>
 }
 
+void global_var(): {} {
+    var_type()  global_var_list() <SEMICOLON>
+}
 
+void global_var_list(): {} {
+    <ID> (<COMMA> <ID>)*
+}
 
-
-
-
+void var_type(): {} {
+    <CHARSTAR> | <CHARSTARSTAR> | <DOUBLE> | <DOUBLESTAR> | <LONG> | <LONGSTAR> | <VOID>
+}
 
 
 
