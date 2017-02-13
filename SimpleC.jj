@@ -129,9 +129,17 @@ void function_or_var_list(): {} {
 
 //template void goal(): {} { }
 
-void 
+void function(): {} {
+    var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
+}
 
+void arg_list(): {} {
+    arg() (<COMMA> arg())*
+}
 
+void arguments(): {} {
+    
+}
 
 
 
