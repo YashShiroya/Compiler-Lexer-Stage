@@ -13,7 +13,7 @@ class ExprEval {
       System.out.println("y="+val);
     }
 
-    static boolean timeline = true;
+    static boolean timeline = false;
 
     static int lp = 0;
     static int rp = 0;
