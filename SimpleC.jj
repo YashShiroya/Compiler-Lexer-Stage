@@ -242,7 +242,15 @@ void else_optional(): {}
     (<ELSE> statement())?
 }
 
+void jump_statement(): {} {
+    <CONTINUE> <SEMICOLON>
+    | <BREAK> <SEMICOLON>
+    | <RETURN> return_val_opt() <SEMICOLON>
+}
 
+void return_val_opt(): {} {
+    (expression())?
+}
 
 
 
