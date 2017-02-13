@@ -120,7 +120,7 @@ TOKEN :
 void goal(): {} { program() <EOF>}
 
 void program(): {} { 
-    // function_or_var_list()
+    function_or_var_list()
 }
 
 
