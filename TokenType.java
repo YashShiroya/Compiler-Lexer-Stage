@@ -13,6 +13,7 @@ enum TokenType {
     COS("cos"),
     TAN("tan"),
     LOG("ln"),
+    VAR("x"),
 
     NUMBER("[0-9]+(\\.[0-9]+)?"),
 
@@ -25,8 +26,7 @@ enum TokenType {
     LPAREN("\\("),
     RPAREN("\\)"),
 
-    COMMA("\\,"),
-    VAR("x");
+    COMMA("\\,");
 
     public final String pattern;
 
