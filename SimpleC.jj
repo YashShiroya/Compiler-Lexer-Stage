@@ -198,6 +198,45 @@ void relational_expr(): {}
     additive_expr() (<LESS> additive_expr() | <GREAT> additive_expr() | <LESSEQUAL> additive_expr() | <GREATEQUAL> relational_expr())*
 }
 
+void additive_expr(): {}
+{
+    multiplicative_expr() (<PLUS> multiplicative_expr() | <MINUS> multiplicative_expr())*
+}
+
+void multiplicative_expr(): {}
+{
+    unary_expr() (<TIMES> multiplicative_expr() | <DIVIDE> multiplicative_expr() | <PERCENT> multiplicative_expr())*
+}
+
+void unary_expr(): {}
+{
+    primary_expr() | <PLUS> 
+}
+
+void compound_statement(): {}
+{
+    <LCURLY> statement_list() <RCURLY>
+}
+
+void statement_list(): {}
+{
+    (statement())*
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
