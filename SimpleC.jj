@@ -123,6 +123,17 @@ void program(): {} {
     function_or_var_list()
 }
 
+void function_or_var_list(): {} {
+    var_type() <ID> (function() | global_var())*
+}
+
+//template void goal(): {} { }
+
+void 
+
+
+
+
 
 
 
