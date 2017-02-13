@@ -124,11 +124,11 @@ void program() : {} {
 }
 
 void function_or_var_list(): {} {
-    var_type() <ID> (function() | global_var())*
+    (function() | global_var())*
 }
 
 void function(): {} {
-    <LPARENT> arguments() <RPARENT> compound_statement()
+   var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
 }
 
 void arg_list(): {} {
@@ -144,11 +144,11 @@ void arg(): {} {
 }
 
 void global_var(): {} {
-    global_var_list() <SEMICOLON>
+    var_type() global_var_list() <SEMICOLON>
 }
 
 void global_var_list(): {} {
-    (<COMMA> <ID>)*
+    <ID> (<COMMA> <ID>)*
 }
 
 void var_type(): {} {
@@ -156,11 +156,11 @@ void var_type(): {} {
 }
 
 void assignment(): {} {
-    (<EQUAL> |  <LBRACE> expression() <RBRACE> <EQUAL>) expression()
+    <ID> (<EQUAL> expression() | <LBRACE> expression() <RBRACE> <EQUAL> expression())
 }
 
 void call(): {} {
-    <LPARENT> call_arguments() <RPARENT>
+    <ID> <LPARENT> call_arguments() <RPARENT>
 }
 
 void call_arg_list(): {} {
@@ -199,10 +199,12 @@ void multiplicative_expr(): {} {
     unary_expr() (<TIMES> multiplicative_expr() | <DIVIDE> multiplicative_expr() | <PERCENT> multiplicative_expr())*
 }
 
+//This
 void unary_expr(): {} {
     primary_expr() | ((<PLUS> | <MINUS> | <AMPERSAND> | <TIMES>) primary_expr())+
 }
 
+//This
 void primary_expr(): {} {
     <STRING_CONST> | <ID> (<LBRACE> expression() <RBRACE> | call())? | <INTEGER_CONST> | <DOUBLE_CONST> | <LPARENT> expression() <RPARENT>
 }
