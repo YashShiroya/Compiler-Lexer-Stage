@@ -412,6 +412,7 @@ void goal() throws ParseException {
     }
   }
 
+//This
   static final public void multiplicative_expr() throws ParseException {
     unary_expr();
     label_10:
@@ -430,17 +431,17 @@ void goal() throws ParseException {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case TIMES:{
         jj_consume_token(TIMES);
-        multiplicative_expr();
+        unary_expr();
         break;
         }
       case DIVIDE:{
         jj_consume_token(DIVIDE);
-        multiplicative_expr();
+        unary_expr();
         break;
         }
       case PERCENT:{
         jj_consume_token(PERCENT);
-        multiplicative_expr();
+        unary_expr();
         break;
         }
       default:
