@@ -159,10 +159,29 @@ void var_type(): {} {
     <CHARSTAR> | <CHARSTARSTAR> | <DOUBLE> | <DOUBLESTAR> | <LONG> | <LONGSTAR> | <VOID>
 }
 
+void assignment(): {} {
+    <ID> ( <EQUAL> expression() | <LBRACE> expression() <RBRACE> <EQUAL> expression())
+}
 
+void call(): {} {
+    <ID> <LPARENT> call_arguments() <RPARENT>
+}
 
+void call_arg_list(): {} {
+    expression() (<COMMA> expression())*
+}
 
+void call_arguments(): {} {
+    (call_arg_list())?
+}
 
+void expression(): {} {
+    logical_or_expr()
+}
+
+void logical_or_expr(): {} {
+    logical_and_expr (<OROR> logical_and_expr())*
+}
 
 
 
