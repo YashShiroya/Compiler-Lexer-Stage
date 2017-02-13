@@ -48,8 +48,8 @@ class ExprEval {
         // tokenList = lexEval.releaseTokenList();
         tokenList = new ArrayList<TokenStruct>();
 
-        tokenList.add(new TokenStruct(TokenType.NUMBER, "1");
-        tokenList.add(new TokenStruct(TokenType.NUMBER, "88");
+        tokenList.add(new TokenStruct(TokenType.NUMBER, "1"));
+        tokenList.add(new TokenStruct(TokenType.NUMBER, "88"));
 
 
         //Change variable to actual "NUMBER"
