@@ -45,7 +45,12 @@ class ExprEval {
         Lexer lexEval = new Lexer(expr);
 
         // Getter gets private TokenList
-        tokenList = lexEval.releaseTokenList();
+        // tokenList = lexEval.releaseTokenList();
+        tokenList = new ArrayList<TokenStruct>();
+
+        tokenList.add(new TokenStruct(TokenType.NUMBER, "1");
+        tokenList.add(new TokenStruct(TokenType.NUMBER, "88");
+
 
         //Change variable to actual "NUMBER"
         for (TokenStruct t : tokenList) {
