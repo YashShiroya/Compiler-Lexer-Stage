@@ -6,15 +6,13 @@ public class SimpleC implements SimpleCConstants {
   /** Main entry point. */
   public static void main(String args[]) throws ParseException {
     SimpleC parser = new SimpleC(System.in);
-    parser.Input();
+    //parser.Input();
+    parser.goal();
   }
 
-// /**Root production. */
-// void Input() :
-// { int count; }
-// {
-//   count=anytoken() <EOF>
-//   { System.out.println("The number of tokens is " + count); }
+/**Root production. */
+// void Input() : {} {
+//     goal();
 // }
 
 // int anytoken():

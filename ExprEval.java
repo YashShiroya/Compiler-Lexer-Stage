@@ -8,6 +8,7 @@ class ExprEval {
           System.out.println("Usage: java expression xval");
           System.exit(1);
         }
+        if(args[0].length == 0) error();
       double val = evaluate(args[0], Double.parseDouble(args[1]));
       System.out.println("y="+val);
     }
