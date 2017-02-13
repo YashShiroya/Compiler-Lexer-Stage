@@ -183,6 +183,21 @@ void logical_or_expr(): {} {
     logical_and_expr() (<OROR> logical_and_expr())*
 }
 
+void logical_and_expr(): {}
+{
+    equality_expr() (<ANDAND> equality_expr())*
+}
+
+void equality_expr(): {}
+{
+    relational_expr() (<EQUALEQUAL> relational_expr() | <NOTEQUAL> relational_expr())*
+}
+
+void relational_expr(): {}
+{
+    additive_expr() (<LESS> additive_expr() | <GREAT> additive_expr() | <LESSEQUAL> additive_expr() | <GREATEQUAL> relational_expr())*
+}
+
 
 
 
