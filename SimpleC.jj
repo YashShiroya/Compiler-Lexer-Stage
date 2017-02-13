@@ -217,7 +217,13 @@ void statement_list(): {} {
     (statement())*
 }
 
+void local_var(): {} {
+    var_type() local_var_list() <SEMICOLON>
+}
 
+void local_var_list(): {} {
+    <ID> (<COMMA> <ID>)*
+}
 
 
 
