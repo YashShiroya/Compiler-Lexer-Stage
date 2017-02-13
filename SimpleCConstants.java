@@ -9,9 +9,103 @@ public interface SimpleCConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int LPARENT = 5;
+  int LPARENT = 8;
   /** RegularExpression Id. */
-  int RPARENT = 6;
+  int RPARENT = 9;
+  /** RegularExpression Id. */
+  int LCURLY = 10;
+  /** RegularExpression Id. */
+  int RCURLY = 11;
+  /** RegularExpression Id. */
+  int LBRACE = 12;
+  /** RegularExpression Id. */
+  int RBRACE = 13;
+  /** RegularExpression Id. */
+  int COMMA = 14;
+  /** RegularExpression Id. */
+  int SEMICOLON = 15;
+  /** RegularExpression Id. */
+  int EQUAL = 16;
+  /** RegularExpression Id. */
+  int ANDAND = 17;
+  /** RegularExpression Id. */
+  int AMPERSAND = 18;
+  /** RegularExpression Id. */
+  int OROR = 19;
+  /** RegularExpression Id. */
+  int EQUALEQUAL = 20;
+  /** RegularExpression Id. */
+  int NOTEQUAL = 21;
+  /** RegularExpression Id. */
+  int LESSEQUAL = 22;
+  /** RegularExpression Id. */
+  int GREATEQUAL = 23;
+  /** RegularExpression Id. */
+  int LESS = 24;
+  /** RegularExpression Id. */
+  int GREAT = 25;
+  /** RegularExpression Id. */
+  int PLUS = 26;
+  /** RegularExpression Id. */
+  int MINUS = 27;
+  /** RegularExpression Id. */
+  int TIMES = 28;
+  /** RegularExpression Id. */
+  int DIVIDE = 29;
+  /** RegularExpression Id. */
+  int PERCENT = 30;
+  /** RegularExpression Id. */
+  int CHARSTARSTAR = 31;
+  /** RegularExpression Id. */
+  int CHARSTAR = 32;
+  /** RegularExpression Id. */
+  int LONGSTAR = 33;
+  /** RegularExpression Id. */
+  int LONG = 34;
+  /** RegularExpression Id. */
+  int VOID = 35;
+  /** RegularExpression Id. */
+  int IF = 36;
+  /** RegularExpression Id. */
+  int ELSE = 37;
+  /** RegularExpression Id. */
+  int WHILE = 38;
+  /** RegularExpression Id. */
+  int DO = 39;
+  /** RegularExpression Id. */
+  int FOR = 40;
+  /** RegularExpression Id. */
+  int CONTINUE = 41;
+  /** RegularExpression Id. */
+  int BREAK = 42;
+  /** RegularExpression Id. */
+  int RETURN = 43;
+  /** RegularExpression Id. */
+  int DOUBLESTAR = 44;
+  /** RegularExpression Id. */
+  int DOUBLE = 45;
+  /** RegularExpression Id. */
+  int ID = 46;
+  /** RegularExpression Id. */
+  int CHAR_CONST = 47;
+  /** RegularExpression Id. */
+  int STRING_CONST = 48;
+  /** RegularExpression Id. */
+  int INTEGER_CONST = 49;
+  /** RegularExpression Id. */
+  int DOUBLE_CONST = 50;
+  /** RegularExpression Id. */
+  int PRINTING_CHAR = 51;
+  /** RegularExpression Id. */
+  int LETTER = 52;
+  /** RegularExpression Id. */
+  int DIGIT = 53;
+  /** RegularExpression Id. */
+  int OCTAL = 54;
+  /** RegularExpression Id. */
+  int HEX_DIGIT = 55;
+  /** RegularExpression Id. */
+  int OTHER_CHAR = 56;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -23,8 +117,58 @@ public interface SimpleCConstants {
     "\"\\t\"",
     "\"\\n\"",
     "\"\\r\"",
+    "\"\\f\"",
+    "<token of kind 6>",
+    "<token of kind 7>",
     "\"(\"",
     "\")\"",
+    "\"{\"",
+    "\"}\"",
+    "\"[\"",
+    "\"]\"",
+    "\",\"",
+    "\";\"",
+    "\"=\"",
+    "\"&&\"",
+    "\"&\"",
+    "\"||\"",
+    "\"==\"",
+    "\"!=\"",
+    "\"<=\"",
+    "\">=\"",
+    "\"<\"",
+    "\">\"",
+    "\"+\"",
+    "\"-\"",
+    "\"*\"",
+    "\"/\"",
+    "\"%\"",
+    "\"char**\"",
+    "\"char*\"",
+    "\"long*\"",
+    "\"long\"",
+    "\"void\"",
+    "\"if\"",
+    "\"else\"",
+    "\"while\"",
+    "\"do\"",
+    "\"for\"",
+    "\"continue\"",
+    "\"break\"",
+    "\"return\"",
+    "\"double*\"",
+    "\"double\"",
+    "<ID>",
+    "<CHAR_CONST>",
+    "<STRING_CONST>",
+    "<INTEGER_CONST>",
+    "<DOUBLE_CONST>",
+    "<PRINTING_CHAR>",
+    "<LETTER>",
+    "<DIGIT>",
+    "<OCTAL>",
+    "<HEX_DIGIT>",
+    "<OTHER_CHAR>",
   };
 
 }

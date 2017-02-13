@@ -31,6 +31,241 @@ System.out.println("LPARENT, \u005c""+t.image+"\u005c"" ); count++;
 System.out.println("RPARENT, \u005c""+t.image+"\u005c"" ); count++;
         break;
         }
+      case ID:{
+        t = jj_consume_token(ID);
+System.out.println("ID, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case LETTER:{
+        t = jj_consume_token(LETTER);
+System.out.println("LETTER, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case DIGIT:{
+        t = jj_consume_token(DIGIT);
+System.out.println("DIGIT, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case LCURLY:{
+        t = jj_consume_token(LCURLY);
+System.out.println("LCURLY, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case RCURLY:{
+        t = jj_consume_token(RCURLY);
+System.out.println("RCURLY, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case LBRACE:{
+        t = jj_consume_token(LBRACE);
+System.out.println("LBRACE, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case RBRACE:{
+        t = jj_consume_token(RBRACE);
+System.out.println("RBRACE, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case COMMA:{
+        t = jj_consume_token(COMMA);
+System.out.println("COMMA, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case SEMICOLON:{
+        t = jj_consume_token(SEMICOLON);
+System.out.println("SEMICOLON, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case EQUAL:{
+        t = jj_consume_token(EQUAL);
+System.out.println("EQUAL, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case AMPERSAND:{
+        t = jj_consume_token(AMPERSAND);
+System.out.println("AMPERSAND, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case OROR:{
+        t = jj_consume_token(OROR);
+System.out.println("OROR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case ANDAND:{
+        t = jj_consume_token(ANDAND);
+System.out.println("ANDAND, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case EQUALEQUAL:{
+        t = jj_consume_token(EQUALEQUAL);
+System.out.println("EQUALEQUAL, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case NOTEQUAL:{
+        t = jj_consume_token(NOTEQUAL);
+System.out.println("NOTEQUAL, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case LESS:{
+        t = jj_consume_token(LESS);
+System.out.println("LESS, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case GREAT:{
+        t = jj_consume_token(GREAT);
+System.out.println("GREAT, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case LESSEQUAL:{
+        t = jj_consume_token(LESSEQUAL);
+System.out.println("LESSEQUAL, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case GREATEQUAL:{
+        t = jj_consume_token(GREATEQUAL);
+System.out.println("GREATEQUAL, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case PLUS:{
+        t = jj_consume_token(PLUS);
+System.out.println("PLUS, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case MINUS:{
+        t = jj_consume_token(MINUS);
+System.out.println("MINUS, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case TIMES:{
+        t = jj_consume_token(TIMES);
+System.out.println("TIMES, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case DIVIDE:{
+        t = jj_consume_token(DIVIDE);
+System.out.println("DIVIDE, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case PERCENT:{
+        t = jj_consume_token(PERCENT);
+System.out.println("PERCENT, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case CHARSTARSTAR:{
+        t = jj_consume_token(CHARSTARSTAR);
+System.out.println("CHARSTARSTAR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case CHARSTAR:{
+        t = jj_consume_token(CHARSTAR);
+System.out.println("CHARSTAR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case LONGSTAR:{
+        t = jj_consume_token(LONGSTAR);
+System.out.println("LONGSTAR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case LONG:{
+        t = jj_consume_token(LONG);
+System.out.println("LONG, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case VOID:{
+        t = jj_consume_token(VOID);
+System.out.println("VOID, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case IF:{
+        t = jj_consume_token(IF);
+System.out.println("IF, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case ELSE:{
+        t = jj_consume_token(ELSE);
+System.out.println("ELSE, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case WHILE:{
+        t = jj_consume_token(WHILE);
+System.out.println("WHILE, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case DO:{
+        t = jj_consume_token(DO);
+System.out.println("DO, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case FOR:{
+        t = jj_consume_token(FOR);
+System.out.println("FOR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case CONTINUE:{
+        t = jj_consume_token(CONTINUE);
+System.out.println("CONTINUE, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case BREAK:{
+        t = jj_consume_token(BREAK);
+System.out.println("BREAK, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case RETURN:{
+        t = jj_consume_token(RETURN);
+System.out.println("RETURN, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case DOUBLESTAR:{
+        t = jj_consume_token(DOUBLESTAR);
+System.out.println("DOUBLESTAR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case DOUBLE:{
+        t = jj_consume_token(DOUBLE);
+System.out.println("DOUBLE, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case CHAR_CONST:{
+        t = jj_consume_token(CHAR_CONST);
+System.out.println("CHAR_CONST, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case STRING_CONST:{
+        t = jj_consume_token(STRING_CONST);
+System.out.println("STRING_CONST, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case INTEGER_CONST:{
+        t = jj_consume_token(INTEGER_CONST);
+System.out.println("INTEGER_CONST, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case DOUBLE_CONST:{
+        t = jj_consume_token(DOUBLE_CONST);
+System.out.println("DOUBLE_CONST, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case PRINTING_CHAR:{
+        t = jj_consume_token(PRINTING_CHAR);
+System.out.println("PRINTING_CHAR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case OCTAL:{
+        t = jj_consume_token(OCTAL);
+System.out.println("OCTAL, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case HEX_DIGIT:{
+        t = jj_consume_token(HEX_DIGIT);
+System.out.println("HEX_DIGIT, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
+      case OTHER_CHAR:{
+        t = jj_consume_token(OTHER_CHAR);
+System.out.println("OTHER_CHAR, \u005c""+t.image+"\u005c"" ); count++;
+        break;
+        }
       default:
         jj_la1[0] = jj_gen;
         jj_consume_token(-1);
@@ -38,7 +273,54 @@ System.out.println("RPARENT, \u005c""+t.image+"\u005c"" ); count++;
       }
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case LPARENT:
-      case RPARENT:{
+      case RPARENT:
+      case LCURLY:
+      case RCURLY:
+      case LBRACE:
+      case RBRACE:
+      case COMMA:
+      case SEMICOLON:
+      case EQUAL:
+      case ANDAND:
+      case AMPERSAND:
+      case OROR:
+      case EQUALEQUAL:
+      case NOTEQUAL:
+      case LESSEQUAL:
+      case GREATEQUAL:
+      case LESS:
+      case GREAT:
+      case PLUS:
+      case MINUS:
+      case TIMES:
+      case DIVIDE:
+      case PERCENT:
+      case CHARSTARSTAR:
+      case CHARSTAR:
+      case LONGSTAR:
+      case LONG:
+      case VOID:
+      case IF:
+      case ELSE:
+      case WHILE:
+      case DO:
+      case FOR:
+      case CONTINUE:
+      case BREAK:
+      case RETURN:
+      case DOUBLESTAR:
+      case DOUBLE:
+      case ID:
+      case CHAR_CONST:
+      case STRING_CONST:
+      case INTEGER_CONST:
+      case DOUBLE_CONST:
+      case PRINTING_CHAR:
+      case LETTER:
+      case DIGIT:
+      case OCTAL:
+      case HEX_DIGIT:
+      case OTHER_CHAR:{
         ;
         break;
         }
@@ -63,11 +345,16 @@ System.out.println("RPARENT, \u005c""+t.image+"\u005c"" ); count++;
   static private int jj_gen;
   static final private int[] jj_la1 = new int[2];
   static private int[] jj_la1_0;
+  static private int[] jj_la1_1;
   static {
       jj_la1_init_0();
+      jj_la1_init_1();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x60,0x60,};
+      jj_la1_0 = new int[] {0xffffff00,0xffffff00,};
+   }
+   private static void jj_la1_init_1() {
+      jj_la1_1 = new int[] {0x1ffffff,0x1ffffff,};
    }
 
   /** Constructor with InputStream. */
@@ -205,7 +492,7 @@ System.out.println("RPARENT, \u005c""+t.image+"\u005c"" ); count++;
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[7];
+    boolean[] la1tokens = new boolean[57];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -216,10 +503,13 @@ System.out.println("RPARENT, \u005c""+t.image+"\u005c"" ); count++;
           if ((jj_la1_0[i] & (1<<j)) != 0) {
             la1tokens[j] = true;
           }
+          if ((jj_la1_1[i] & (1<<j)) != 0) {
+            la1tokens[32+j] = true;
+          }
         }
       }
     }
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 57; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;
