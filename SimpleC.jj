@@ -126,12 +126,15 @@ void program() : {} {
 //This
 void function_or_var_list(): {} {
     // (function() | global_var())*
+    // Conflict root. Solved one warning
     var_type() <ID> (function() | global_var())*
 }
 
 //This
 void function(): {} {
-   // var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
+    // var_type() <ID> <LPARENT> arguments() <RPARENT> compound_statement()
+    // Resolves var_type() <ID> conflict with function() and global_var() in function_or_var_list() by
+    // taking out var_type() and <ID> common
     <LPARENT> arguments() <RPARENT> compound_statement()
 }
 
@@ -150,12 +153,14 @@ void arg(): {} {
 //This
 void global_var(): {} {
     // var_type() global_var_list() <SEMICOLON>
+    // Resolves var_type() <ID> conflict with function(), then move up
     global_var_list() <SEMICOLON>
 }
 
 //This
 void global_var_list(): {} {
     // <ID> (<COMMA> <ID>)*
+    // Resolves <ID> conflict with global_var, then move up
     (<COMMA> <ID>)*
 }
 
