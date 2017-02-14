@@ -253,6 +253,7 @@ void statement(): {} {
 }
 
 void else_optional(): {} {
+    // Root of conflict. Warning. Then move up, to statement
     (<ELSE> statement())?
 }
 
