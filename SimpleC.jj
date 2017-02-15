@@ -216,7 +216,7 @@ void multiplicative_expr(): {} {
 
 //This
 void unary_expr(): {} {
-    primary_expr() | ((<PLUS> | <MINUS> | <AMPERSAND> | <TIMES>) primary_expr())+
+    primary_expr() | ((<PLUS> | <MINUS> | <AMPERSAND> | <TIMES>) primary_expr())*
 }
 
 //This
