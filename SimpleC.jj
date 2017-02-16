@@ -134,7 +134,7 @@ void program() : {} {
 void function_or_var_list(): {} {
     // (function() | global_var())*
     // Conflict root. Solved one warning
-    var_type() <ID> (function() | global_var())*
+    (var_type() <ID> (function() | global_var()))*
 }
 
 //This

@@ -12,7 +12,7 @@ public class SimpleC implements SimpleCConstants {
             parser.goal();
         }
         catch(ParseException e) {
-            System.out.print(e.currentToken.beginLine);
+            System.out.println("Error at line: " + e.currentToken.beginLine);
         }
 
     }
