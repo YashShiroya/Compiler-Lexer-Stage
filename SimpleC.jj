@@ -172,6 +172,8 @@ void assignment(): {} {
     <ID> (<EQUAL> expression() | <LBRACE> expression() <RBRACE> <EQUAL> expression())
 }
 
+//This here
+//Warning root for call()
 void call(): {} {
     <ID> <LPARENT> call_arguments() <RPARENT>
 }
@@ -200,23 +202,25 @@ void equality_expr(): {} {
     relational_expr() (<EQUALEQUAL> relational_expr() | <NOTEQUAL> relational_expr())*
 }
 
+//This
+//Taking out common. Not necessary.
 void relational_expr(): {} {
-    additive_expr() (<LESS> additive_expr() | <GREAT> additive_expr() | <LESSEQUAL> additive_expr() | <GREATEQUAL> additive_expr())*
+    additive_expr() ((<LESS> | <GREAT> | <LESSEQUAL> | <GREATEQUAL>) additive_expr())*
 }
 
 void additive_expr(): {} {
-    multiplicative_expr() ( (<PLUS> | <MINUS>) multiplicative_expr() )*
+    multiplicative_expr() ((<PLUS> | <MINUS>) multiplicative_expr())*
 }
 
 //This
 void multiplicative_expr(): {} {
     // unary_expr() (<TIMES> multiplicative_expr() | <DIVIDE> multiplicative_expr() | <PERCENT> multiplicative_expr())*
-    unary_expr() (<TIMES> unary_expr() | <DIVIDE> unary_expr() | <PERCENT> unary_expr())*
+    unary_expr() ((<TIMES> unary_expr() | <DIVIDE> unary_expr() | <PERCENT> unary_expr())*
 }
 
 //This
 void unary_expr(): {} {
-    primary_expr() | ((<PLUS> | <MINUS> | <AMPERSAND> | <TIMES>) primary_expr())+
+    primary_expr() | (<PLUS> | <MINUS> | <AMPERSAND> | <TIMES>) unary_expr()
 }
 
 //This
