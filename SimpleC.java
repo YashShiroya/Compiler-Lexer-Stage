@@ -4,11 +4,18 @@
 public class SimpleC implements SimpleCConstants {
 
   /** Main entry point. */
-  public static void main(String args[]) throws ParseException {
-    SimpleC parser = new SimpleC(System.in);
-    //parser.Input();
-    parser.goal();
-  }
+    public static void main(String args[]) throws ParseException {
+
+        SimpleC parser = new SimpleC(System.in);
+        //parser.Input();
+        try {
+            parser.goal();
+        }
+        catch(ParseException e) {
+            System.out.print(e.currentToken.beginLine);
+        }
+
+    }
 
 /**Root production. */
 // void Input() : {} {
