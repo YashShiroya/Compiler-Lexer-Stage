@@ -14,7 +14,7 @@ public class SimpleC implements SimpleCConstants {
         }
         catch(ParseException e) {
             //LineNum: Syntax Error
-            System.out.println("LineNum: " + e.currentToken.beginLine + "Syntax Error");
+            System.out.println("LineNum: " + e.currentToken.beginLine + " Syntax Error");
         }
 
     }

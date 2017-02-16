@@ -15,7 +15,7 @@ public class SimpleC {
         }
         catch(ParseException e) {
             //LineNum: Syntax Error
-            System.out.println("LineNum: " + e.currentToken.beginLine + " Syntax Error");
+            System.out.println(e.currentToken.beginLine + ": Syntax Error");
         }
 
     }
