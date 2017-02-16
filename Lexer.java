@@ -89,8 +89,10 @@ public class Lexer {
         if(lexer_debug) System.out.println("len: " + expressionReplaced.length());
 
         if(expressionReplaced.length() != 0) {
-            System.out.print("err_str:" + expressionReplaced + " \n");
-            System.out.println("Error: Lexer detected unidentified tokens.");
+            // System.out.print("err_str:" + expressionReplaced + " \n");
+            // System.out.println("Error: Lexer detected unidentified tokens.");
+            System.out.println("ERROR: Grammar Violated");
+            System.exit(1);
         }
 
         // we create a pattern object from the above regex, minus the first character (since its an extraneous | character that was just an artifact of looping)
