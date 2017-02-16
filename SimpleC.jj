@@ -249,8 +249,8 @@ void local_var_list(): {} {
 }
 
 void statement(): {} {
-   <ID> (assignment() <SEMICOLON>)
-        | (call() <SEMICOLON>)
+   <ID> (assignment() <SEMICOLON>
+    | call() <SEMICOLON>)
     | local_var()
     | compound_statement()
     | <IF> <LPARENT> expression() <RPARENT> statement() else_optional()
