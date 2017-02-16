@@ -249,14 +249,14 @@ void local_var_list(): {} {
 }
 
 void statement(): {} {
-    (assignment() <SEMICOLON>)
-    | (call() <SEMICOLON>)
-    | (local_var())
-    | (compound_statement())
+   <ID> ((assignment() <SEMICOLON>)
+        | (call() <SEMICOLON>))
+    | local_var()
+    | compound_statement()
     | <IF> <LPARENT> expression() <RPARENT> statement() else_optional()
     | <WHILE> <LPARENT> expression() <RPARENT> statement()
     | <DO> statement() <WHILE> <LPARENT> expression() <RPARENT> <SEMICOLON>
-    | <FOR> <LPARENT> assignment() <SEMICOLON> expression() <SEMICOLON>  assignment() <RPARENT> statement()
+    | <FOR> <LPARENT> <ID> assignment() <SEMICOLON> expression() <SEMICOLON> <ID> assignment() <RPARENT> statement()
     | jump_statement()
 }
 

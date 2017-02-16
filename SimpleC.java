@@ -188,8 +188,9 @@ void goal() throws ParseException {
     }
   }
 
+//This
+// Take common, factor <ID>
   static final public void assignment() throws ParseException {
-    jj_consume_token(ID);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case EQUAL:{
       jj_consume_token(EQUAL);
@@ -214,7 +215,6 @@ void goal() throws ParseException {
 //This here
 //Warning root for call()
   static final public void call() throws ParseException {
-    jj_consume_token(ID);
     jj_consume_token(LPARENT);
     call_arguments();
     jj_consume_token(RPARENT);
@@ -504,8 +504,8 @@ void goal() throws ParseException {
     case ID:{
       jj_consume_token(ID);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case LBRACE:
-      case ID:{
+      case LPARENT:
+      case LBRACE:{
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
         case LBRACE:{
           jj_consume_token(LBRACE);
@@ -513,7 +513,7 @@ void goal() throws ParseException {
           jj_consume_token(RBRACE);
           break;
           }
-        case ID:{
+        case LPARENT:{
           call();
           break;
           }
@@ -561,7 +561,10 @@ void goal() throws ParseException {
     label_11:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case LPARENT:
       case LCURLY:
+      case LBRACE:
+      case EQUAL:
       case CHARSTARSTAR:
       case CHARSTAR:
       case LONGSTAR:
@@ -575,8 +578,7 @@ void goal() throws ParseException {
       case BREAK:
       case RETURN:
       case DOUBLESTAR:
-      case DOUBLE:
-      case ID:{
+      case DOUBLE:{
         ;
         break;
         }
@@ -614,11 +616,13 @@ void goal() throws ParseException {
 
   static final public void statement() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case ID:{
+    case LBRACE:
+    case EQUAL:{
       assignment();
       jj_consume_token(SEMICOLON);
       break;
-      }{
+      }
+    case LPARENT:{
       call();
       jj_consume_token(SEMICOLON);
       break;
@@ -765,10 +769,10 @@ void goal() throws ParseException {
       jj_la1_init_1();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0xc100,0xc100,0x4000,0x80000000,0x4000,0x80000000,0x11000,0x4000,0x1c040100,0x80000,0x20000,0x300000,0x300000,0x3c00000,0x3c00000,0xc000000,0xc000000,0x70000000,0x70000000,0x1c040000,0x1c040100,0x1000,0x1000,0x100,0x80000400,0x4000,0x80000400,0x0,0x0,0x1c040100,};
+      jj_la1_0 = new int[] {0xc100,0xc100,0x4000,0x80000000,0x4000,0x80000000,0x11000,0x4000,0x1c040100,0x80000,0x20000,0x300000,0x300000,0x3c00000,0x3c00000,0xc000000,0xc000000,0x70000000,0x70000000,0x1c040000,0x1c040100,0x1100,0x1100,0x100,0x80011500,0x4000,0x80011500,0x0,0x0,0x1c040100,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x0,0x0,0x0,0x300f,0x0,0x300f,0x0,0x0,0x74000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x74000,0x4000,0x4000,0x74000,0x7fdf,0x0,0x7fdf,0x20,0xe00,0x74000,};
+      jj_la1_1 = new int[] {0x0,0x0,0x0,0x300f,0x0,0x300f,0x0,0x0,0x74000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x74000,0x0,0x0,0x74000,0x3fdf,0x0,0x3fdf,0x20,0xe00,0x74000,};
    }
 
   /** Constructor with InputStream. */
