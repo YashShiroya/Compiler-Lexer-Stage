@@ -10,6 +10,7 @@ public class SimpleC implements SimpleCConstants {
         //parser.Input();
         try {
             parser.goal();
+            System.out.println("The program compiled Successfully.");
         }
         catch(ParseException e) {
             System.out.println("Error at line: " + e.currentToken.beginLine);
