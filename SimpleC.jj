@@ -215,7 +215,7 @@ void additive_expr(): {} {
 //This
 void multiplicative_expr(): {} {
     // unary_expr() (<TIMES> multiplicative_expr() | <DIVIDE> multiplicative_expr() | <PERCENT> multiplicative_expr())*
-    unary_expr() ((<TIMES> unary_expr() | <DIVIDE> unary_expr() | <PERCENT> unary_expr())*
+    unary_expr() (<TIMES> unary_expr() | <DIVIDE> unary_expr() | <PERCENT> unary_expr())*
 }
 
 //This
