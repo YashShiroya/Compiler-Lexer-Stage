@@ -168,14 +168,18 @@ void var_type(): {} {
     <CHARSTAR> | <CHARSTARSTAR> | <DOUBLE> | <DOUBLESTAR> | <LONG> | <LONGSTAR> | <VOID>
 }
 
+//This
+// Take common, factor <ID>
 void assignment(): {} {
-    <ID> (<EQUAL> expression() | <LBRACE> expression() <RBRACE> <EQUAL> expression())
+    // <ID> (<EQUAL> expression() | <LBRACE> expression() <RBRACE> <EQUAL> expression())
+    (<EQUAL> expression() | <LBRACE> expression() <RBRACE> <EQUAL> expression())
 }
 
 //This here
 //Warning root for call()
 void call(): {} {
-    <ID> <LPARENT> call_arguments() <RPARENT>
+    // <ID> <LPARENT> call_arguments() <RPARENT>
+    <LPARENT> call_arguments() <RPARENT>
 }
 
 void call_arg_list(): {} {
